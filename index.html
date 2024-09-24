@@ -1,0 +1,452 @@
+<html lang="en"></html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Doe - Software Developer & Product Manager</title>
+<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<style>
+  :root {
+    --primary-color: #ffffff;
+    --secondary-color: #a0a0a0;
+    --text-color: #ffffff;
+    --background-color: #000000;
+    --card-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+  
+  header.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  .hero {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.8)), url('https://source.unsplash.com/random/1600x900/?galaxy,stars') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.05)" points="0,100 100,0 100,100"/></svg>');
+    background-size: cover;
+  }
+  
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+  
+  .btn {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--background-color);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin: 0.5rem;
+    box-shadow: 0 4px 6px rgba(255,255,255,0.1);
+  }
+  
+  .btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(255,255,255,0.15);
+  }
+  
+  .section {
+    padding: 5rem 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .skill-card {
+    background: var(--card-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .skill-card:hover {
+    box-shadow: 0 15px 30px rgba(255,255,255,0.2);
+  }
+  
+  .skill-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .project-card {
+    background: var(--card-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    box-shadow: 0 15px 30px rgba(255,255,255,0.2);
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .project-card-content {
+    padding: 1.5rem;
+  }
+  
+  .project-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+  }
+  
+  footer {
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  footer p {
+    margin: 0.5rem 0;
+  }
+
+  .privacy-statement {
+    font-size: 0.9rem;
+  }
+
+  .privacy-statement a {
+    color: var(--background-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+
+  .privacy-statement a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+const Header = () => {
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header className={scrolled ? 'scrolled' : ''}>
+      <div className="container">
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+const Hero = () => {
+  React.useEffect(() => {
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 160, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 1, random: true, anim: { enable: true, speed: 1, opacity_min: 0, sync: false } },
+        size: { value: 3, random: true, anim: { enable: false, speed: 4, size_min: 0.3, sync: false } },
+        line_linked: { enable: false },
+        move: { enable: true, speed: 1, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: { onhover: { enable: true, mode: "bubble" }, onclick: { enable: true, mode: "repulse" }, resize: true },
+        modes: {
+          bubble: { distance: 250, size: 0, duration: 2, opacity: 0, speed: 3 },
+          repulse: { distance: 400, duration: 0.4 }
+        }
+      },
+      retina_detect: true
+    });
+  }, []);
+  
+  return (
+    <section id="home" className="hero">
+      <div id="particles-js"></div>
+      <div className="hero-content">
+        <h1>Minhoru Cotache</h1>
+        <p>Software Developer & Product Manager</p>
+        <a href="#contact" className="btn">Get in Touch</a>
+      </div>
+    </section>
+  );
+};
+
+const About = () => (
+  <section id="about" className="section">
+    <div className="container">
+      <h2 className="section-title">About Me</h2>
+      <p>I'm a passionate software developer and product manager with over 5 years of experience in creating innovative solutions. My expertise lies in full-stack development, agile methodologies, and translating complex business requirements into user-friendly applications.</p>
+    </div>
+  </section>
+);
+
+const Skills = () => (
+  <section id="skills" className="section">
+    <div className="container">
+      <h2 className="section-title">Skills</h2>
+      <div className="skills-grid">
+        <div className="skill-card">
+          <i className="fas fa-code"></i>
+          <h3>Full-Stack Development</h3>
+        </div>
+        <div className="skill-card">
+          <i className="fas fa-tasks"></i>
+          <h3>Product Management</h3>
+        </div>
+        <div className="skill-card">
+          <i className="fas fa-mobile-alt"></i>
+          <h3>Mobile App Development</h3>
+        </div>
+        <div className="skill-card">
+          <i className="fas fa-database"></i>
+          <h3>Database Design</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const Projects = () => (
+  <section id="projects" className="section">
+    <div className="container">
+      <h2 className="section-title">Projects</h2>
+      <div className="projects-grid">
+        <div className="project-card">
+          <img src="/img/wawacoding.png" alt="Programming teaching websitel"/>
+          <div className="project-card-content">
+            <h3>WawaCodingHuancayo Programming Website</h3>
+            <p>A fully responsive website with user authentication, learning courses and programs for kids in Peru.</p>
+          </div>
+        </div>
+        <div className="project-card">
+          <img src="/img/fitfuel.png" alt="Fitness Tracking App thumbnail"/>
+          <div className="project-card-content">
+            <h3>FitFuel-Protein Tracking WebApp</h3>
+            <p>A mobile application for tracking workouts, protein, having daily motivational phrases, and monitoring progress using React Native.</p>
+          </div>
+        </div>
+        <div className="project-card">
+          <img src="/img/LDSChatbot.png" alt="AI LDS Chatbot"/>
+          <div className="project-card-content">
+            <h3>AI LDS ChatBot Scraper</h3>
+            <p>A conversational AI chatbot for customer support, built using natural language processing and machine learning techniques.</p>
+          </div>
+        </div>
+        <div className="project-card">
+          <img src="/img/miralaolla.png" alt="AI Chatbot thumbnail"/>
+          <div className="project-card-content">
+            <h3>MiraLaOlla Food Website</h3>
+            <p>A simple interactive customer based websited built on HTML, CSS and JavaScript</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const Contact = () => (
+  <section id="contact" className="section">
+    <div className="container">
+      <h2 className="section-title">Get in Touch</h2>
+      <div className="contact-buttons">
+        <a href="https://github.com/Minhoru123" className="btn" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/johndoe" className="btn" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="mailto:johndoe@example.com" className="btn">
+          <i className="fas fa-envelope"></i> Email
+        </a>
+      </div>
+    </div>
+  </section>
+);
+
+const Footer = () => (
+  <footer>
+    <div className="container">
+      <p>&copy; 2024 Minhoru Cotache. All rights reserved.</p>
+      <p className="privacy-statement">
+        <a href="https://portfolio.dev/privacy-policy">Privacy Policy</a> | 
+        <a href="https://portfolio.dev/terms-of-service">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+);
+
+const App = () => (
+  <React.Fragment>
+    <Header />
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Contact />
+    <Footer />
+  </React.Fragment>
+);
+
+ReactDOM.render(<App />, document.getElementById('root'));
+</script>
+
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>
