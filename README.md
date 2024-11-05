@@ -18,7 +18,8 @@ Here’s a snapshot of the tools, languages, and frameworks I use in my projects
 - Other Skills: Cloud orchestration, natural language processing, image segmentation, sentiment analysis, frontend and backend development
 
 ## Projects
-1. WawaCodingHuancayo
+
+#### WawaCodingHuancayo
    
 Description: An online programming school based in Peru to teach coding to underrepresented kids. Features a chatbot and introductory programming lessons for kids aged 10-13.
 
@@ -26,7 +27,7 @@ Tech Stack: HTML, CSS, JavaScript
 
 Key Features: Knowledge-based chatbot, interactive lessons, and a simple, kid-friendly UI.
 
-2. Hand-Writing-Recognition with bigger databases
+#### Hand-Writing-Recognition with bigger databases
    
 Description: A handwriting recognition project using OCR with image segmentation techniques to recognize and analyze handwritten text.
 
@@ -34,7 +35,7 @@ Tech Stack: Python, OpenCV, PyTesseract, Jupyter Notebooks
 
 Challenges Solved: OCR implementation on handwritten data, dealing with non-linear and mis-oriented text for improved accuracy.
 
-3. Sentiment Analysis
+#### Sentiment Analysis
 
 Description: A sentiment analysis project to analyze and categorize text data, useful for applications in social media monitoring and customer feedback analysis.
 
@@ -42,7 +43,7 @@ Tech Stack: Python, Natural Language Processing tools
 
 Highlights: Analyzing large datasets, text classification, and sentiment scoring.
 
-4. Credential Validation Platform for International Students
+#### Credential Validation Platform for International Students
    
 Description: A resource to help international students navigate the U.S. job market, detailing CPT, OPT, and H-1B visa processes.
 
@@ -50,7 +51,7 @@ Tech Stack: Web development stack (HTML, CSS, JavaScript)
 
 Purpose: Simplifies complex information for students and employers, bridging gaps in understanding visa requirements.
 
-5. AllBookPDF AI Project
+#### AllBookPDF AI Project
 
 Description: A personalized knowledge assistant tool that uses GPT-4 to generate responses based on book content. AllBook combines the power of Flask, Express.js, and LangChain for efficient data processing and retrieval.
 
