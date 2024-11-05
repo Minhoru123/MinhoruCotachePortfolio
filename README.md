@@ -1,4 +1,4 @@
-## Minhoru Cotache's Portfolio
+# Minhoru Cotache's Portfolio
 Welcome to my portfolio repository! Here, you'll find an overview of my journey in AI, machine learning, and software development, along with a collection of my most significant projects and professional experience.
 
 ## About Me
@@ -7,15 +7,15 @@ Hi, I'm Minhoru Cotache – an AI Architect, AI Consultant, and Machine Learning
 ## Skills & Technologies
 Here’s a snapshot of the tools, languages, and frameworks I use in my projects:
 
-Programming Languages: Java, Python, JavaScript
+- Programming Languages: Java, Python, JavaScript
 
-Frameworks & Libraries: Flask, Django, Express
+- Frameworks & Libraries: Flask, Django, Express
 
-AI/ML: TensorFlow, PyTorch, Scikit-Learn, OCR Tesseract
+- AI/ML: TensorFlow, PyTorch, Scikit-Learn, OCR Tesseract
 
-Data & Cloud Tools: AWS (S3, DynamoDB, SQS), Azure CycleCloud, Jupyter Notebooks
+- Data & Cloud Tools: AWS (S3, DynamoDB, SQS), Azure CycleCloud, Jupyter Notebooks
 
-Other Skills: Cloud orchestration, natural language processing, image segmentation, sentiment analysis, frontend and backend development
+- Other Skills: Cloud orchestration, natural language processing, image segmentation, sentiment analysis, frontend and backend development
 
 ## Projects
 1. WawaCodingHuancayo
@@ -26,7 +26,7 @@ Tech Stack: HTML, CSS, JavaScript
 
 Key Features: Knowledge-based chatbot, interactive lessons, and a simple, kid-friendly UI.
 
-3. Hand-Writing-Recognition with bigger databases
+2. Hand-Writing-Recognition with bigger databases
    
 Description: A handwriting recognition project using OCR with image segmentation techniques to recognize and analyze handwritten text.
 
@@ -34,7 +34,7 @@ Tech Stack: Python, OpenCV, PyTesseract, Jupyter Notebooks
 
 Challenges Solved: OCR implementation on handwritten data, dealing with non-linear and mis-oriented text for improved accuracy.
 
-4. Sentiment Analysis
+3. Sentiment Analysis
 
 Description: A sentiment analysis project to analyze and categorize text data, useful for applications in social media monitoring and customer feedback analysis.
 
@@ -42,7 +42,7 @@ Tech Stack: Python, Natural Language Processing tools
 
 Highlights: Analyzing large datasets, text classification, and sentiment scoring.
 
-5. Credential Validation Platform for International Students
+4. Credential Validation Platform for International Students
    
 Description: A resource to help international students navigate the U.S. job market, detailing CPT, OPT, and H-1B visa processes.
 
@@ -50,7 +50,7 @@ Tech Stack: Web development stack (HTML, CSS, JavaScript)
 
 Purpose: Simplifies complex information for students and employers, bridging gaps in understanding visa requirements.
 
-6. AllBookPDF AI Project
+5. AllBookPDF AI Project
 
 Description: A personalized knowledge assistant tool that uses GPT-4 to generate responses based on book content. AllBook combines the power of Flask, Express.js, and LangChain for efficient data processing and retrieval.
 
