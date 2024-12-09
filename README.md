@@ -35,14 +35,6 @@ Tech Stack: Python, OpenCV, PyTesseract, Jupyter Notebooks
 
 Challenges Solved: OCR implementation on handwritten data, dealing with non-linear and mis-oriented text for improved accuracy.
 
-#### Sentiment Analysis
-
-Description: A sentiment analysis project to analyze and categorize text data, useful for applications in social media monitoring and customer feedback analysis.
-
-Tech Stack: Python, Natural Language Processing tools
-
-Highlights: Analyzing large datasets, text classification, and sentiment scoring.
-
 #### Credential Validation Platform for International Students
    
 Description: A resource to help international students navigate the U.S. job market, detailing CPT, OPT, and H-1B visa processes.
